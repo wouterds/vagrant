@@ -35,4 +35,4 @@ Just run `vagrant up` and everything should be fine.
 
 [http://vagrantmanager.com/](http://vagrantmanager.com/)
 
-![demo.gif](https://vagrantmanager.com/demo.gif)
+![demo.gif](http://vagrantmanager.com/demo.gif)
