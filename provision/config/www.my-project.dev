@@ -1,0 +1,38 @@
+server {
+	listen 80;
+	server_name my-project.dev www.my-project.dev;
+	root /var/www/my-project;
+#	root /var/www/my-project/public;
+	index index.php;
+
+	access_log /var/log/nginx/access-dev.my-project.log;
+	error_log  /var/log/nginx/error-dev.my-project.log;
+
+	sendfile off;
+	allow all;
+	autoindex on;
+
+	location / {
+		try_files $uri $uri/ index.php?$args =404;
+	}
+
+#	location / {
+#		if (!-f $request_filename) {
+#			rewrite ^.*$ /index.php;
+#		}
+#	}
+#
+#	location /static {
+#		alias /var/www/my-project/static;
+#	}
+
+	location ~ .*\.php$ {
+		include fastcgi_params;
+		fastcgi_connect_timeout 5s;
+		fastcgi_read_timeout 20s;
+		fastcgi_index index.php;
+		fastcgi_param APPLICATION_MODE local;
+		fastcgi_param SCRIPT_FILENAME $document_root/$fastcgi_script_name;
+		fastcgi_pass unix:/var/run/php5-fpm.sock;
+	}
+}
