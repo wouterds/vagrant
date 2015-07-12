@@ -16,6 +16,7 @@ A basic barebone project I use for projects.
 	- php5-mcrypt
 	- php5-xdebug
 - Git
+- Oh-my-zsh
 - Composer
 - NodeJS
 	- grunt-cli

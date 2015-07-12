@@ -6,6 +6,10 @@ echo "Europe/Brussels" > /etc/timezone
 dpkg-reconfigure -f noninteractive tzdata
 apt-get update -y
 
+echo "Installing Oh-my-zsh.."
+apt-get install zsh
+sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+
 echo "Installing Git.."
 apt-get install git -y
 
