@@ -1,6 +1,6 @@
 server {
 	listen 80;
-	server_name my-project.dev www.my-project.dev;
+	server_name my-project.dev www.my-project.dev ~^my-project\.\d+\.\d+\.\d+\.\d+\.xip\.io$;
 	root /var/www/my-project;
 #	root /var/www/my-project/public;
 	index index.php;
