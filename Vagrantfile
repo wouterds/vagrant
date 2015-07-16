@@ -4,8 +4,8 @@ VM_BOX = "puphpet/debian75-x64"
 MAPPING_DIR_LOCAL = "/Users/MyUsername/www/my-project"
 MAPPING_DIR_VM = "/var/www/my-project"
 MACHINE_NAME = "Vagrant-MyProject"
-MACHINE_CPUS = "2"
-MACHINE_MEMORY = "1024"
+MACHINE_CPUS = `sysctl -n hw.ncpu`.to_i # Use all machine CPUs
+MACHINE_MEMORY = `sysctl -n hw.memsize`.to_i / 1024 / 1024 / 4 # Use 25% of available memory
 MACHINE_HOSTNAME = "vagrant-my-project"
 MACHINE_IP = "10.10.10.100"
 
