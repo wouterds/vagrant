@@ -24,8 +24,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 		vb.name = MACHINE_NAME
 		vb.customize ["modifyvm", :id, "--memory", MACHINE_MEMORY]
 		vb.customize ["modifyvm", :id, "--cpus", MACHINE_CPUS]
-		vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
-		vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
 	end
 
 	# stdin is not a tty fix | src: http://foo-o-rama.com/vagrant--stdin-is-not-a-tty--fix.html

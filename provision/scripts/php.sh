@@ -1,12 +1,5 @@
 #!/bin/bash
 
-# PHP 5.6 sources
-echo "deb http://packages.dotdeb.org wheezy-php56 all" >> /etc/apt/sources.list
-echo "deb-src http://packages.dotdeb.org wheezy-php56 all" >> /etc/apt/sources.list
-wget http://www.dotdeb.org/dotdeb.gpg
-apt-key add dotdeb.gpg -y
-apt-get update -y
-
 echo "Installing PHP core.."
 apt-get install php5-dev -y
 apt-get install php-pear -y
