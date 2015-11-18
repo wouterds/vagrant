@@ -1,7 +1,6 @@
 #!/bin/bash
 
 echo "Installing PHP core.."
-apt-get install php5 -y
 apt-get install php5-cli -y
 apt-get install php5-fpm -y
 

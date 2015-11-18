@@ -14,7 +14,6 @@ cd /tmp
 wget http://www.dotdeb.org/dotdeb.gpg
 apt-key add dotdeb.gpg -y
 apt-get update -y
-apt-get upgrade -y
 
 echo "Installing Git.."
 apt-get install git -y
